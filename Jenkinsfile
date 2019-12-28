@@ -4,7 +4,7 @@ pipeline {
   stages {    
     stage('Cloning Git') {
       steps {
-        git url: 'https://github.com/sangkhim/admin.git', branch: 'prod', credentialsId: '291e32ecdeba4ba67fd3ba104269bb39cf25b3ea'
+        git url: 'https://github.com/sangkhim/admin.git', branch: 'prod', credentialsId: '50b61f7895f284b1276dd2078c754ebaabe801e7'
       }
     }
     
