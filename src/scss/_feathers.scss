@@ -1,0 +1,45 @@
+.feather {
+  width: 18px;
+  height: 18px;
+  vertical-align: text-bottom;
+
+  &.feather-sm {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.feather-md {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.feather-lg {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.feather-xl {
+    width: 48px;
+    height: 48px;
+  }
+
+  &.feather-2x {
+    width: 64px;
+    height: 64px;
+  }
+
+  &.feather-3x {
+    width: 92px;
+    height: 92px;
+  }
+
+  &.feather-4x {
+    width: 128px;
+    height: 128px;
+  }
+
+  &.feather-5x {
+    width: 256px;
+    height: 256px;
+  }
+}
