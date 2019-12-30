@@ -2,9 +2,7 @@ html, body {
     height: 100%;
 }
 
-body {
-    padding-top: 75px;
-}
-
+@import 'scss/animate.scss';
 @import 'scss/buttons.scss';
+@import 'scss/dropdown.scss';
 @import 'scss/feathers.scss';
