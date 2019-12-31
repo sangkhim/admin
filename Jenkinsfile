@@ -23,7 +23,7 @@ pipeline {
     stage('Run on PM2') {
       steps {
          sh 'cp -a dist prod'
-         sh 'sed -i "s/dist\/browser/prod\/browser/g" prod/server.js"'
+         sh 'sed -i "s/dist\/browser/prod\/browser/g" prod/server.js'
          sh 'export BUILD_ID=dontKillMePlease'
          sh 'pm2 restart prod/server'
       }
