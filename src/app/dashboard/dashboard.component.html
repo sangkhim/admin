@@ -1,11 +1,45 @@
-<app-partials-navbar></app-partials-navbar>
 
-<div class="container-fluid">
-    <div class="row">
-        <app-partials-sidebar></app-partials-sidebar>
-    </div>
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="toolbar-brand">
+    <button mat-icon-button routerLink="/dashboard">
+      <mat-icon class="toolbar-brand-icon">dehaze</mat-icon>
+    </button>
+    <span class="toolbar-brand-name">BoreyAdmin</span>
+  </div>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-        <router-outlet></router-outlet>
-    </main>
-</div>
+  <div>
+    <button mat-icon-button [matMenuTriggerFor]="email" aria-label="icon-button with a menu">
+      <mat-icon matBadge="15" matBadgeColor="warn">email</mat-icon>
+    </button>
+    <mat-menu #email="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="accountCircle" aria-label="icon-button with a menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #accountCircle="matMenu">
+      <button mat-menu-item routerLink="/dashboard/profile">
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Sign Out</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

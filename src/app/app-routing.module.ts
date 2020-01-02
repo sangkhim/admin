@@ -1,21 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { LoginComponent } from '@app/login/login.component';
-
 const routes: Routes = [
+  { path: 'login', loadChildren: () => import('@app/login/login.module').then(m => m.LoginModule) },
   {
-    path: '',
-    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+    path: 'dashboard',
+    loadChildren: () => import('@app/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: '**',
-    redirectTo: ''
-  }
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({

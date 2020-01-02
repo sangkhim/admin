@@ -1,1 +1,29 @@
-::ng-deep body { padding-top: 75px; }
+.mat-toolbar {
+  &.mat-toolbar-row,
+  &.mat-toolbar-single-row {
+    height: 56px;
+  }
+
+  .toolbar-brand {
+    display: flex;
+    align-items: center;
+
+    .toolbar-brand-icon {
+      width: 26px;
+      height: 26px;
+      font-size: 26px;
+      line-height: 26px;
+    }
+
+    .toolbar-brand-name {
+      margin-left: 8px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+}
+
+button.mat-menu-item {
+  line-height: 36px !important;
+  height: 36px !important;
+}

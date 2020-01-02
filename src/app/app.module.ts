@@ -1,29 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // used to create fake backend
-import { fakeBackendProvider } from './_helpers';
+import { fakeBackendProvider } from '@app/core/helpers';
+import { JwtInterceptor, ErrorInterceptor } from '@app/core/helpers';
 
-import { AppRoutingModule } from './app-routing.module';
-
-import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from '@app/app-routing.module';
+import { AppComponent } from '@app/app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
